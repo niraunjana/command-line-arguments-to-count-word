@@ -24,17 +24,23 @@ Split the line using .split
 ##Developed by: NIRAUNJANA GAYATHRI G R
 ##RegisterNumber: 22008369
 import sys
-count=0
-with open(sys.argv[1],'r') as f1:
-        for line in f1:
-            word= line.split()
-            count += len(word)
-print("word Count in file = ",count)  
+count = {}
+with open(sys.argv[1], 'r') as f:
+    for line in f:
+        for word in line.split():
+            if word not in count:
+                count[word] = 1
+            else:
+                count[word] += 1
+print(count)
+f.close()
 ```
 
 
 ### OUTPUT:
-![image](https://user-images.githubusercontent.com/119395610/214828171-26728d02-48c4-47d3-b1a1-503d897bd674.png)
+![WhatsApp Image 2023-01-28 at 12 38 23](https://user-images.githubusercontent.com/119395610/215252359-b160c110-21fd-450e-b6fd-1f3d47ad629c.jpg)
+
+
 
 
 
